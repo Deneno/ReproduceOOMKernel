@@ -1,4 +1,4 @@
-package com.adguard.android.myapplication
+package com.test.android.myapplication
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.adguard.android.myapplication", appContext.packageName)
+        assertEquals("com.test.android.myapplication", appContext.packageName)
     }
 }

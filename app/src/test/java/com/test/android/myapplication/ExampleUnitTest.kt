@@ -1,4 +1,4 @@
-package com.adguard.android.myapplication
+package com.test.android.myapplication
 
 import org.junit.Test
 

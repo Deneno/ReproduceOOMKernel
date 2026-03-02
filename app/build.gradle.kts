@@ -1,10 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = "com.adguard.android.myapplication"
+    namespace = "com.test.android.myapplication"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.adguard.android.myapplication"
+        applicationId = "com.test.android.myapplication"
         minSdk = 24
         targetSdk = 36
         versionCode = 1

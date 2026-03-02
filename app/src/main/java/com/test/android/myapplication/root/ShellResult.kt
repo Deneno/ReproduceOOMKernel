@@ -1,7 +1,6 @@
-package com.adguard.android.myapplication.root
+package com.test.android.myapplication.root
 
 import androidx.annotation.CallSuper
-import java.nio.CharBuffer
 import java.util.concurrent.Future
 import java.util.concurrent.TimeUnit
 
@@ -83,33 +82,6 @@ open class ShellResult<T>(
         override fun add(result: String) {
             output.add(result)
             super.add(result)
-        }
-    }
-
-    /** Future shell result that represents result as char buffer */
-    class Buffer(output: CharBuffer) : ShellResult<CharBuffer>(output, null) {
-        private var read: Int = 0
-
-        override fun add(result: String) {
-            if (isCancelled) {
-                return
-            } else if (read + result.length <= output.length) {
-                output.put(result)
-                read += result.length
-            } else {
-                val sizePart = output.length - read
-                if (sizePart > 0) {
-                    output.put(result.substring(0, output.length - read))
-                    read += sizePart
-                }
-                cancel(true)
-            }
-            super.add(result)
-        }
-
-        override fun setupDone() {
-            output.flip().limit(read)
-            super.setupDone()
         }
     }
 

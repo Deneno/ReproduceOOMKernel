@@ -1,4 +1,4 @@
-package com.adguard.android.myapplication.root
+package com.test.android.myapplication.root
 
 /** Possible device's root states */
 sealed class RootState {
@@ -15,6 +15,6 @@ sealed class RootState {
 
     /** Device's root types */
     enum class RootType {
-        Magisk, Other
+        Other
     }
 }
